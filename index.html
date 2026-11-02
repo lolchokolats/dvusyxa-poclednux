@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Движение Последних</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><img src="8.png" alt="" onerror="this.style.visibility='hidden'"><b>Движение Последних</b></header>
+<main>
+  <section id="s1">
+    <h1>Регистрация</h1>
+    <p class="sub">Выбери, кто ты в этой жизни</p>
+    <div class="cards">
+      <button class="card role" onclick="show(2)">
+        <img src="7.png" alt="" onerror="this.style.visibility='hidden'">
+        <div><h2>Я банан</h2><p>деградация обеспечена ✓</p></div>
+      </button>
+    </div>
+  </section>
+
+  <section id="s2" hidden>
+    <button class="back" onclick="show(1)">← Назад</button>
+    <h1>Анкета банана</h1>
+    <p class="sub">Заполни данные. Или не заполняй, нам всё равно</p>
+    <form class="card" onsubmit="return go(event)">
+      <label>Фамилия, имя<input required placeholder="Бананов Банан Бананович"></label>
+      <label>Телефон<input required type="tel" placeholder="+7 (000) 000-00-00"></label>
+      <label>Почта<input required type="email" placeholder="banan@ya.ru"></label>
+      <label>Степень спелости
+        <select><option>Зелёный (ещё есть надежда)</option><option>Жёлтый (норм)</option><option>С чёрными пятнами (мой вайб)</option><option>Банановая кожура</option></select>
+      </label>
+      <label>Сколько часов в день ты лежишь?<input type="number" min="0" max="25" placeholder="от 0 до 25"></label>
+      <label>Любимая отговорка<input placeholder="Я завтра начну"></label>
+      <label class="chk"><input type="checkbox" required> Подтверждаю, что я ничего не умею и горжусь этим</label>
+      <label class="chk"><input type="checkbox"> Хочу получать новости, которые не читаю</label>
+      <button class="go">Деградировать</button>
+    </form>
+  </section>
+</main>
+<script>
+function show(n){document.getElementById('s1').hidden=n!==1;document.getElementById('s2').hidden=n!==2;scrollTo(0,0)}
+function go(e){e.preventDefault();location.href='okak.html';return false}
+</script>
+</body>
+</html>
